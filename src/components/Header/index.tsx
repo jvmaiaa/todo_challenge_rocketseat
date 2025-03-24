@@ -1,5 +1,11 @@
+import * as S from  './styles';
+import logo from '../../assets/Logo.svg';
 export const Header = () => {
   return (
-    <h1>Esse é o componente Header</h1>
-  )
+    <S.HeaderContainer>
+      <S.LogoContainer>
+        <S.LogoHeader src={logo} alt="logo" />
+      </S.LogoContainer>
+    </S.HeaderContainer>
+  );
 }

@@ -15,5 +15,21 @@ export default {
     blueDark: '#1E6F9F',
 
     danger: '#E25858'
+  }, 
+
+  fonts: {
+    inter: {
+      family: 'Inter, sans-serif',
+      size: {
+        small: '12px',
+        medium: '14px',
+        large: '16px'
+      },
+      weight: {
+        regular: 400,
+        bold: 700
+      },
+      lineHeight: '140%'
+    }
   }
 };
