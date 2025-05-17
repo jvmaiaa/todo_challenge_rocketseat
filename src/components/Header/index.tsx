@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <S.HeaderContainer>
       <S.LogoContainer>
-        <S.LogoHeader src={logo} alt="logo" />
+        <S.Logo src={logo} alt="logo" />
       </S.LogoContainer>
     </S.HeaderContainer>
   );
