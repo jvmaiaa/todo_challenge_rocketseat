@@ -9,12 +9,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 3.8125rem;
+  flex-direction: column;
 `;
 
 export const InformationContainer = styled.div`
   display: flex;
   width: 46rem;
   flex-direction: column;
+  margin-bottom: 1.5rem;
 `;
 
 export const CountGroup = styled.div`

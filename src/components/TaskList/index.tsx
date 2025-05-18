@@ -1,17 +1,19 @@
 import * as S from './styles';
 import theme from '../../styles/theme';
+import { TaskCard } from '../TaskCard';
 
 interface TaskListProps {
   createdTasksCount: number;
   completedTasksCount: number;
+  tasks?: {
+    id: string;
+    name: string;
+    completed: boolean;
+  }[];
 }
 
-// interface LabelProps {
-//   color: string;
-// }
-
-export const TaskList = ({createdTasksCount, completedTasksCount}: TaskListProps
-) => {
+export const TaskList = ({createdTasksCount, completedTasksCount}: TaskListProps) => {
+  const taskTitle = "testando";
 
   return (
     <S.Container>
@@ -30,6 +32,7 @@ export const TaskList = ({createdTasksCount, completedTasksCount}: TaskListProps
 
         </S.CountGroup>
       </S.InformationContainer>
+      <TaskCard taskName={taskTitle} />
     </S.Container>
   );
 }
