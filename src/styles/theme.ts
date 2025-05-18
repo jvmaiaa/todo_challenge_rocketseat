@@ -14,6 +14,7 @@ const theme = {
 
     blue: '#4EA8DE',
     blueDark: '#1E6F9F',
+    blueDarkHover: '#155B84',
 
     danger: '#E25858'
   }, 

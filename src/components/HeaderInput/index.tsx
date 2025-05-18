@@ -11,7 +11,7 @@ export const HeaderInput = ({ placeholderName, namedButton }: HeaderInputProps) 
   return (
     <S.Container>
       <S.InputNameTask placeholder={placeholderName} />
-      <S.ButtonCreateTaskContainer>
+      <S.ButtonCreateTaskContainer type="submit">
         <S.ButtonCreateTaskText>{namedButton}</S.ButtonCreateTaskText>
         <S.ButtonCreateTaskIcon />
       </S.ButtonCreateTaskContainer>

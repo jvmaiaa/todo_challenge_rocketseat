@@ -6,7 +6,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  /* width: 46rem; */
   height: 3.375rem;
   margin-top: -1.7rem;
 `;
@@ -32,6 +31,10 @@ export const ButtonCreateTaskContainer = styled.button`
   border: none;
   gap: 0.5rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${({theme}) => theme.colors.blueDarkHover};
+  }
 `;
 
 export const ButtonCreateTaskText = styled.p`
