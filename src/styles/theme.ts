@@ -10,6 +10,7 @@ const theme = {
     
     purple: '#8284FA',
     purpleDark: '#5E60CE',
+    purpleTest: '#0D0D0D', // Cor para testar theme
 
     blue: '#4EA8DE',
     blueDark: '#1E6F9F',
