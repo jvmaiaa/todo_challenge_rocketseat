@@ -1,17 +1,25 @@
-  import * as S from './styles';
-
+  import { useState } from 'react';
+import * as S from './styles';
 
 interface HeaderInputProps {
   placeholderName: string;
-  // placeHolderButton: string;
   namedButton: string;
+  onAddTask: (taskName: string) => void;
 }
 
-export const HeaderInput = ({ placeholderName, namedButton }: HeaderInputProps) => {
+export const HeaderInput = ({ placeholderName, namedButton, onAddTask }: HeaderInputProps) => {
+  const [input, setInput] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onAddTask(input.trim());
+    setInput("");
+  }
+
   return (
-    <S.Container>
-      <S.InputNameTask placeholder={placeholderName} />
-      <S.ButtonCreateTaskContainer type="submit">
+    <S.Container as="form" onSubmit={handleSubmit} >
+      <S.InputNameTask placeholder={placeholderName} onChange={(e) => setInput(e.target.value)}/>
+      <S.ButtonCreateTaskContainer type="submit" >
         <S.ButtonCreateTaskText>{namedButton}</S.ButtonCreateTaskText>
         <S.ButtonCreateTaskIcon />
       </S.ButtonCreateTaskContainer>
