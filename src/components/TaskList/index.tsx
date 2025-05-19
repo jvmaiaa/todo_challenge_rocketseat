@@ -2,20 +2,15 @@ import * as S from './styles';
 import theme from '../../styles/theme';
 import { TaskCard } from '../TaskCard';
 import { EmptyTaskList } from '../EmptyTaskList';
+import { Task } from '../../DTO/TaskRequest';
 
 interface TaskListProps {
   createdTasksCount: number;
   completedTasksCount: number;
-  tasks?: {
-    id: string;
-    name: string;
-    completed: boolean;
-  }[];
+  tasks?: Task[]; 
 }
 
-export const TaskList = ({createdTasksCount, completedTasksCount}: TaskListProps) => {
-  const taskTitle = "testando";
-  const task = 0;
+export const TaskList = ({createdTasksCount, completedTasksCount, tasks = []}: TaskListProps) => {
   return (
     <S.Container>
       <S.InformationContainer>
@@ -31,8 +26,14 @@ export const TaskList = ({createdTasksCount, completedTasksCount}: TaskListProps
             </S.CompletedTasks>
           </S.CountGroup>
       </S.InformationContainer>
-      {task === 0 ? <EmptyTaskList /> : <TaskCard taskName={taskTitle} />}
-        
+      
+      { 
+        (tasks.length === 0) 
+        ? <EmptyTaskList /> 
+        : tasks.map(task => (
+          <TaskCard key={task.id}taskName={task.name} />
+        ))
+      }
     </S.Container>
   );
 }

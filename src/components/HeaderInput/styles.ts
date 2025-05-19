@@ -15,7 +15,7 @@ export const InputNameTask = styled.input`
   background-color: ${({theme}) => theme.colors.gray_500};
   border-radius: 8px;
   outline: none;
-  border: none;   
+  border: none;
   padding-left: 1rem;
   color: ${({theme}) => theme.colors.gray_100};
 `;
