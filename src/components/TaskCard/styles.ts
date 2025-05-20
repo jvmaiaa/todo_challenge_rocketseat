@@ -15,6 +15,10 @@ export const Container = styled.div`
   & + & {
     margin-top: 0.75rem;
   }
+
+  &:last-child {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const ContentTaskGroup = styled.div`
