@@ -11,6 +11,10 @@ export const Container = styled.div`
   width: 100%;
   height: 4rem;
   justify-content: center;
+
+  & + & {
+    margin-top: 0.75rem;
+  }
 `;
 
 export const ContentTaskGroup = styled.div`
