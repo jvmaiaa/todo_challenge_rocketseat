@@ -3,6 +3,7 @@ import theme from '../../styles/theme';
 import { TaskCard } from '../TaskCard';
 import { EmptyTaskList } from '../EmptyTaskList';
 import { Task } from '../../DTO/TaskRequest';
+import { useState } from 'react';
 
 interface TaskListProps {
   createdTasksCount: number;
@@ -17,6 +18,8 @@ export const TaskList = ({
   tasks = [],
   onToggleTask
 }: TaskListProps) => {
+  // const [countCompletedTasks, setCountCompletedTasks] = useState<number>(0);
+
   return (
     <S.Container>
       <S.InformationContainer>
@@ -37,11 +40,11 @@ export const TaskList = ({
         (tasks.length === 0) 
         ? <EmptyTaskList /> 
         : tasks.map(task => (
-          <TaskCard 
-            key={task.id} 
+          <TaskCard
+            key={task.id}
             taskName={task.name} 
             isChecked={task.completed} 
-            onToggle={() => onToggleTask(task.id)}
+            onToggle={() => onToggleTask && onToggleTask(task.id)}
           />
         ))
       }
