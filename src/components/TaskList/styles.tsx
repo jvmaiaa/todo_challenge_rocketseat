@@ -45,7 +45,8 @@ export const Count = styled.span`
   line-height: ${({ theme }) => theme.fonts.inter.lineHeight};
   color: ${({theme}) => theme.colors.gray_100};
   background-color: ${({ theme }) => theme.colors.gray_400};
-  width: 1.5rem;
+  /* width: 1.5rem; */
+  padding: 0rem 0.5rem;
   text-align: center;
   border-radius: 8px;
 `;

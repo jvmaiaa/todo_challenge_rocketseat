@@ -3,6 +3,8 @@ import * as S from './styles';
 
 interface TaskCardProps {
   taskName: string;
+  isChecked: boolean;
+  onToggle: () => void;
 }
 
 export const TaskCard = ({taskName}: TaskCardProps) => {
@@ -17,12 +19,10 @@ export const TaskCard = ({taskName}: TaskCardProps) => {
       <S.ContentTaskGroup>
         <S.TaskInfoGroup>
           <S.CheckWrapper onClick={toggleChecked}>
-            {isChecked ? (
-              <S.CheckIcon
-              />
-            ) : (
-              <S.Circle />
-            )}
+            { isChecked 
+              ? (<S.CheckIcon />) 
+              : (<S.Circle />)
+            }
           </S.CheckWrapper>
           <S.TaskName isChecked={isChecked}>{taskName}</S.TaskName>
         </S.TaskInfoGroup>

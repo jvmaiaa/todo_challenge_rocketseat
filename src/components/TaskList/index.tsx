@@ -8,9 +8,15 @@ interface TaskListProps {
   createdTasksCount: number;
   completedTasksCount: number;
   tasks?: Task[]; 
+  onToggleTask?: (taskId: string) => void;
 }
 
-export const TaskList = ({createdTasksCount, completedTasksCount, tasks = []}: TaskListProps) => {
+export const TaskList = ({
+  createdTasksCount,
+  completedTasksCount,
+  tasks = [],
+  onToggleTask
+}: TaskListProps) => {
   return (
     <S.Container>
       <S.InformationContainer>
@@ -22,7 +28,7 @@ export const TaskList = ({createdTasksCount, completedTasksCount, tasks = []}: T
 
             <S.CompletedTasks>
               <S.Label color={theme.colors.purple}>Concluídas</S.Label>
-              <S.Count>{completedTasksCount}</S.Count>
+              <S.Count>{completedTasksCount} de {createdTasksCount}</S.Count>
             </S.CompletedTasks>
           </S.CountGroup>
       </S.InformationContainer>
@@ -31,7 +37,12 @@ export const TaskList = ({createdTasksCount, completedTasksCount, tasks = []}: T
         (tasks.length === 0) 
         ? <EmptyTaskList /> 
         : tasks.map(task => (
-          <TaskCard key={task.id}taskName={task.name} />
+          <TaskCard 
+            key={task.id} 
+            taskName={task.name} 
+            isChecked={task.completed} 
+            onToggle={() => onToggleTask(task.id)}
+          />
         ))
       }
     </S.Container>
