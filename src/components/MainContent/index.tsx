@@ -14,6 +14,7 @@ export const MainContent = () => {
     name: taskName,
     completed: false,
   };
+  console.log(newTask);
   // Add the new task to the tasks state
   setTasks(prev => [...prev, newTask]);
   };

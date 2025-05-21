@@ -7,24 +7,21 @@ interface TaskCardProps {
   onToggle: () => void;
 }
 
-export const TaskCard = ({taskName}: TaskCardProps) => {
-  const [isChecked, setIsChecked] = useState(false);
+export const TaskCard = ({taskName, isChecked, onToggle}: TaskCardProps) => {
 
-
-  const toggleChecked = () => setIsChecked(!isChecked);
-
-  // }
   return (
     <S.Container>
       <S.ContentTaskGroup>
         <S.TaskInfoGroup>
-          <S.CheckWrapper onClick={toggleChecked}>
+          <S.CheckWrapper onClick={onToggle}>
             { isChecked 
               ? (<S.CheckIcon />) 
               : (<S.Circle />)
             }
           </S.CheckWrapper>
-          <S.TaskName isChecked={isChecked}>{taskName}</S.TaskName>
+          <S.TaskName isChecked={isChecked}>
+            {taskName}
+          </S.TaskName>
         </S.TaskInfoGroup>
   
         <S.DeleteIcon />

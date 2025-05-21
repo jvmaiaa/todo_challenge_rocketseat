@@ -18,7 +18,10 @@ export const HeaderInput = ({ placeholderName, namedButton, onAddTask }: HeaderI
 
   return (
     <S.Container as="form" onSubmit={handleSubmit} >
-      <S.InputNameTask placeholder={placeholderName} onChange={(e) => setInput(e.target.value)}/>
+      <S.InputNameTask 
+        placeholder={placeholderName}
+        value={input}
+        onChange={(e) => setInput(e.target.value)}/>
       <S.ButtonCreateTaskContainer type="submit" >
         <S.ButtonCreateTaskText>{namedButton}</S.ButtonCreateTaskText>
         <S.ButtonCreateTaskIcon />
