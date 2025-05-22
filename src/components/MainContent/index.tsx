@@ -14,7 +14,6 @@ export const MainContent = () => {
     name: taskName,
     completed: false,
   };
-  console.log(newTask);
   // Add the new task to the tasks state
   setTasks(prev => [...prev, newTask]);
   };
@@ -34,7 +33,6 @@ export const MainContent = () => {
   const handleDeleteTask = (taskId: string) => {
     const newTaskList = taskList.filter(task => task.id !== taskId);
     setTasks(newTaskList);
-    console.log("botão deletando")
   } 
 
 
