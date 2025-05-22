@@ -31,6 +31,13 @@ export const MainContent = () => {
     setTasks(updatedTasks);
   };
 
+  const handleDeleteTask = (taskId: string) => {
+    const newTaskList = taskList.filter(task => task.id !== taskId);
+    setTasks(newTaskList);
+    console.log("botão deletando")
+  } 
+
+
   return (
     <S.Container>
       <HeaderInput
@@ -40,11 +47,11 @@ export const MainContent = () => {
       />
       <TaskList 
         createdTasksCount={taskList.length} 
-        completedTasksCount={taskList.filter(t => t.completed).length} 
+        completedTasksCount={taskList.filter(t => t.completed).length}
         tasks={taskList}
         onToggleTask={handleToggleTask}
+        onDeleteTask={handleDeleteTask}
       />
-      {/* <Menu /> */}
     </S.Container>
   );
 }

@@ -3,20 +3,21 @@ import theme from '../../styles/theme';
 import { TaskCard } from '../TaskCard';
 import { EmptyTaskList } from '../EmptyTaskList';
 import { Task } from '../../DTO/TaskRequest';
-import { useState } from 'react';
 
 interface TaskListProps {
   createdTasksCount: number;
   completedTasksCount: number;
   tasks?: Task[]; 
   onToggleTask?: (taskId: string) => void;
+  onDeleteTask?: (taskId: string) => void;
 }
 
 export const TaskList = ({
   createdTasksCount,
   completedTasksCount,
   tasks = [],
-  onToggleTask
+  onToggleTask,
+  onDeleteTask
 }: TaskListProps) => {
   // const [countCompletedTasks, setCountCompletedTasks] = useState<number>(0);
 
@@ -44,7 +45,8 @@ export const TaskList = ({
             key={task.id}
             taskName={task.name} 
             isChecked={task.completed} 
-            onToggle={() => onToggleTask && onToggleTask(task.id)}
+            onToggleTask={() => onToggleTask && onToggleTask(task.id)}
+            onDeleteTask={() => onDeleteTask && onDeleteTask(task.id)}
           />
         ))
       }
